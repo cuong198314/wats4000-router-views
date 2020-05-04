@@ -40,12 +40,12 @@ export default {
     validateForm: function () {
       if ((this.username != '') &&
           (this.email != '') &&
-          (this.password === this.passwordVerify)){
+          (this.password === this.passwordVerify)) {
         // Form data is valid, so turn off the form to show the success message.
-        this.showForm = false;
+        this.showForm = false
       } else {
         // Form data is NOT valid, so show the error message.
-        this.showError = true;
+        this.showError = true
       }
     }
   }

@@ -8,14 +8,14 @@
         <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1" v-model="q1"></label></p>
 
         <p>Q2: What languages interest you the most?<br>
-          <label v-for="language in languageOptions">
+          <label v-for="language in languageOptions" :key="language.languageOptions">
             <input type="checkbox" v-model="q2" v-bind:value="language.value">
             {{ language.text }}
           </label>
         </p>
 
         <p>Q3: What other topics interest you?<br>
-          <label v-for="topic in topicOptions">
+          <label v-for="topic in topicOptions" :key="topic.topicOptions">
             <input type="checkbox" v-model="q3" v-bind:value="topic.value">
             {{ topic.text }}
           </label>
@@ -52,61 +52,61 @@ export default {
       q5: '',
       languageOptions: [
         {
-            text: 'JavaScript',
-            value: 'js'
+          text: 'JavaScript',
+          value: 'js'
         },
         {
-            text: 'Python',
-            value: 'py'
+          text: 'Python',
+          value: 'py'
         },
         {
-            text: 'Ruby',
-            value: 'ruby'
+          text: 'Ruby',
+          value: 'ruby'
         },
         {
-            text: 'Java',
-            value: 'java'
+          text: 'Java',
+          value: 'java'
         },
         {
-            text: 'PHP',
-            value: 'php'
+          text: 'PHP',
+          value: 'php'
         }
       ],
       topicOptions: [
         {
-            text: 'Accessibility',
-            value: 'axe'
+          text: 'Accessibility',
+          value: 'axe'
         },
         {
-            text: 'Experience Design',
-            value: 'ux'
+          text: 'Experience Design',
+          value: 'ux'
         },
         {
-            text: 'Operations',
-            value: 'ops'
+          text: 'Operations',
+          value: 'ops'
         },
         {
-            text: 'Search Engine Optimization',
-            value: 'seo'
+          text: 'Search Engine Optimization',
+          value: 'seo'
         },
         {
-            text: 'Multimedia',
-            value: 'media'
+          text: 'Multimedia',
+          value: 'media'
         }
       ]
     }
   },
   methods: {
     validateForm: function () {
-      if ((this.q1 != '') &&
+      if ((this.q1 !== '') &&
           (this.q2.length > 0) &&
           (this.q3.length > 0) &&
-          (this.q4 != '') &&
-          (this.q5 != '')) {
+          (this.q4 !== '') &&
+          (this.q5 !== '')) {
         // Form is valid
-        this.$router.push('secret');
+        this.$router.push('secret')
       } else {
-        this.showError = true;
+        this.showError = true
       }
     }
   }
@@ -128,7 +128,6 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-
 
 a {
   color: #42b983;
